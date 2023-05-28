@@ -1,13 +1,15 @@
 name: Publish Library
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      trigger_name:
+        description: "Publish a new version. Make sure package.json has been updated with a new version before running."
+        required: true
+        default: "Publish manually"
 
 jobs:
   publish:
-    if: contains(github.event.head_commit.message, 'publish')
     runs-on: ubuntu-latest
 
     steps:
