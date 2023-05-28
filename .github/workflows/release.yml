@@ -30,3 +30,24 @@ jobs:
           npm publish --access=private
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  watch:
+    needs: publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check for Package.json changes
+        id: check_changes
+        run: |
+          if [ -n "$(git diff --name-only ${{ github.sha }}^ ${{ github.sha }} -- package.json)" ]; then
+            echo "::set-output name=changed::true"
+          else
+            echo "::set-output name=changed::false"
+          fi
+
+      - name: Trigger Workflow on Version Change
+        if: ${{ steps.check_changes.outputs.changed == 'true' }}
+        run: echo "Package.json version changed. Triggering workflow."
