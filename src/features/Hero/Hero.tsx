@@ -1,23 +1,23 @@
-import { createRef } from 'react';
-
 interface Props {
   heading: string;
   body: string;
   companyName: string;
+  onClick?: VoidFunction;
+  heroImage: string;
 }
-export const Hero = ({ heading, body, companyName }: Props) => {
-  const ref = createRef<HTMLDivElement>();
-  const handleClick = () => {
-    if (ref.current) {
-      ref.current.nextElementSibling?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
+export const Hero = ({
+  heading,
+  body,
+  companyName,
+  onClick,
+  heroImage,
+}: Props) => {
   return (
     <div
-      ref={ref}
       className='hero min-h-screen'
       style={{
-        backgroundImage: `url("/hero.jpg")`,
+        backgroundImage: `url("${heroImage}")`,
         backgroundAttachment: 'fixed',
       }}
     >
@@ -31,7 +31,7 @@ export const Hero = ({ heading, body, companyName }: Props) => {
 
             <h2 className='mb-5 text-5xl font-bold'>{heading}</h2>
             <p className='mb-5'>{body}</p>
-            <button onClick={handleClick} className='btn btn-primary'>
+            <button onClick={onClick} className='btn btn-primary'>
               See more
             </button>
           </div>

@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +9,13 @@ export default defineConfig({
       name: 'ub-lc-component-library',
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [
+        'react',
+        'react-dom',
+        'react-hook-form',
+        'react-query',
+        '@hookform/resolvers',
+      ],
       output: {
         globals: {
           react: 'React',
