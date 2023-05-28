@@ -26,4 +26,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build
-          npx auto@9 release
+          latestTag=$(git describe --tags --abbrev=0)
+          npx auto@9 release --base-branch=${{ github.base_ref }} --tag-name=${latestTag}
