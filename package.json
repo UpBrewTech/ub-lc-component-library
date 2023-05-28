@@ -1,6 +1,6 @@
 {
   "name": "@upbrewtech/ub-lc-component-library",
-  "version": "1.0.3-alpha.3",
+  "version": "1.0.3-alpha.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
