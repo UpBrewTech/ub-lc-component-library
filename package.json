@@ -1,6 +1,5 @@
 {
-  "name": "@upbrewtech/ub-lc-component-library",
-  "private": true,
+  "name": "@UpBrewTech/ub-lc-component-library",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
