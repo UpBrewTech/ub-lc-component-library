@@ -1,10 +1,14 @@
 {
   "name": "@upbrewtech/ub-lc-component-library",
-  "version": "1.0.3-alpha.6",
+  "version": "1.0.3-alpha.8",
   "type": "module",
+  "source": "index.ts",
+  "main": "./dist/@upbrewtech/ub-lc-component-library.cjs",
+  "module": "./dist/@upbrewtech/ub-lc-component-library.module.js",
+  "unpkg": "./dist/@upbrewtech/ub-lc-component-library.umd.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -47,11 +51,16 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "eslint-plugin-storybook": "^0.6.12",
+    "microbundle": "0.15.1",
     "postcss": "^8.4.24",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.18",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
+  },
+  "exports": {
+    "require": "./dist/@upbrewtech/ub-lc-component-library.cjs",
+    "default": "./dist/@upbrewtech/ub-lc-component-library.modern.js"
   }
 }
