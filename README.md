@@ -1,1 +1,0 @@
-# ub-lc-component-library
