@@ -7,6 +7,17 @@ export default defineConfig({
     lib: {
       entry: 'src/features/index.ts',
       name: 'ub-lc-component-library',
+      formats: ['es', 'umd'],
+      fileName: format => `ub-lc-component-library.${format}.js`,
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
   },
   plugins: [react()],
