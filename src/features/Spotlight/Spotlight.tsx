@@ -1,4 +1,4 @@
-import { SpotlightFeature } from "./SpotlightFeature";
+import { SpotlightFeature } from './SpotlightFeature';
 
 interface Props {
   title: string;
@@ -11,9 +11,9 @@ interface Props {
 
 export const Spotlight = ({ title, features }: Props) => {
   return (
-    <div className="bg-neutral text-neutral-content py-32 md:py-44 px-10 block">
-      <h3 className="text-center text-3xl mb-24 text-primary">{title}</h3>
-      <div className="flex gap-12 justify-center flex-wrap">
+    <div className='bg-neutral text-neutral-content py-32 md:py-44 px-10 block'>
+      <h3 className='text-center text-3xl mb-24 text-primary'>{title}</h3>
+      <div className='flex gap-12 justify-center flex-wrap'>
         {features.map((feature, index) => (
           <SpotlightFeature
             key={index}

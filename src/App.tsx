@@ -1,5 +1,5 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ContactUs } from "./components";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ContactUs } from './features';
 
 const client = new QueryClient();
 
