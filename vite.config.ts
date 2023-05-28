@@ -8,21 +8,6 @@ export default defineConfig({
       entry: 'src/features/index.ts',
       name: 'ub-lc-component-library',
     },
-    rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        'react-hook-form',
-        'react-query',
-        '@hookform/resolvers',
-      ],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
-    },
   },
   plugins: [react()],
 });
