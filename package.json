@@ -1,6 +1,6 @@
 {
   "name": "@upbrewtech/ub-lc-component-library",
-  "version": "1.0.3-alpha.8",
+  "version": "1.0.4",
   "license": "MIT",
   "type": "module",
   "source": "index.ts",
