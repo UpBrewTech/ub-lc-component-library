@@ -1,16 +1,16 @@
-import { ContactUsFormData } from ".";
+import { ContactUsFormData } from './schema';
 
 export const sendMessage = async (formData: ContactUsFormData) => {
-  const response = await fetch("/api/contact_us", {
-    method: "POST",
+  const response = await fetch('/api/contact_us', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),
   });
 
   if (!response.ok) {
-    throw new Error("An error occurred while sending message.");
+    throw new Error('An error occurred while sending message.');
   }
 
   return response.json();

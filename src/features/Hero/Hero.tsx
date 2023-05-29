@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRef } from 'react';
 
 interface Props {
@@ -7,7 +8,6 @@ interface Props {
   heroImage: string;
 }
 
-// ttest force update
 export const Hero = ({ heading, body, companyName, heroImage }: Props) => {
   const ref = createRef<HTMLDivElement>();
   const handleClick = () => {
@@ -43,3 +43,5 @@ export const Hero = ({ heading, body, companyName, heroImage }: Props) => {
     </div>
   );
 };
+
+export default Hero;
